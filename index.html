@@ -1111,7 +1111,9 @@ function sendWhatsAppOrder() {
     msg += `${item.emoji} ${item.name} × ${item.qty} = ${(item.price * item.qty).toLocaleString()} IQD\n`;
   });
   msg += `━━━━━━━━━━━━━━━━━━\n`;
-  msg += `💰 *المجموع الكلي: ${total.toLocaleString()} IQD*\n`;
+  msg += `💰 *المجموع الكلي: ${total.toLocaleString()} IQD*\n`;msg += `🛵 *رسوم التوصيل: 2,750 IQD*\n`;
+msg += `🛵 *رسوم التوصيل: 2,750 IQD*\n`;
+
   if (selectedLocation) {
     msg += `━━━━━━━━━━━━━━━━━━\n`;
     msg += `📍 *رابط الموقع:*\nhttps://maps.google.com/?q=${selectedLocation.lat},${selectedLocation.lng}`;

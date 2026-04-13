@@ -1114,5 +1114,30 @@ function showToast(msg) {
 // ===== INIT =====
 renderDashboard();
 </script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBh_ioTdjIFeXArnNRxEcQiF273",
+    authDomain: "shkedtayeb-99b9a.firebaseapp.com",
+    databaseURL: "https://shkedtayeb-99b9a-default-rtdb.firebaseio.com",
+    projectId: "shkedtayeb-99b9a",
+    storageBucket: "shkedtayeb-99b9a.appspot.com",
+    messagingSenderId: "237308818412",
+    appId: "1:237308818412:web:34fdb8a2620368"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // وظيفة إرسال التحديثات للسحابة
+  window.saveChanges = function(data) {
+    set(ref(db, 'menu'), data).then(() => {
+      alert("تم تحديث الأسعار عند جميع الزبائن فوراً!");
+    });
+  };
+</script>
+
 </body>
 </html>
